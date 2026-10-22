@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>To-Do App</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <main class="container">
+            <!--app heading & progress stats-->
+            <section class="stats-container">
+
+                <div class="details">
+                    <h1>To Do App</h1>
+                    <p>Get it done!</p>
+                    <div id="progressbar">
+                        <div id="progress"></div>
+                    </div>
+                </div>
+
+                <div class="stats-numbers">
+                    <p id="numbers"> 0 / 0</p>
+                </div>
+
+            </section>
+
+            <!--Form for adding new tasks-->
+            <form id="taskForm">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Add a new task"
+                    autocomplete="off"
+                >
+                <button id="newTask" type="submit" aria-label="Add task">
+                    +
+                </button>
+            </form>
+
+            <!--Tasks appear here-->
+            <ul id="taskList"></ul>
+
+
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+</html>

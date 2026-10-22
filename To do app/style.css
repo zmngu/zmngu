@@ -1,0 +1,218 @@
+/* colour pallete & settings*/
+:root {
+    --background: #E8EDE5;
+    --secondary-background: #7A8F72;
+    --text: #4E2C13;
+    --card-background: #FFFAEB; 
+    --border-color: #7A8F72;
+}
+
+/*result default browser spacing*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*main page*/
+body {
+    min-height: 100vh;
+    padding: 30px 16px;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/*app container*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 550px;
+    margin: 80px auto 0;
+}
+
+/*heading & statistics*/
+.stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--card-background);
+}
+
+.details {
+    flex: 1;
+    min-width: 0;
+}
+
+.details h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.details p {
+    font-size: 15px;
+}
+
+/*progress bar*/
+#progressbar {
+    width: 100%;
+    height: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--background);
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--text);
+    transition: width 0.3s ease; 
+}
+
+/*completed / total counter*/
+#numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*add task form*/
+#taskForm {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-top: 35px;
+}
+
+#taskInput {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    outline: none;
+    background-color: var(--card-background);
+    color: var(--text);
+    font-size: 16px;
+}
+
+#taskInput::placeholder {
+    color: #E1D0BF;
+}
+
+#taskInput:focus {
+    border-color: var(--text);
+}
+
+/*add button*/
+#newTask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--secondary-background);
+    color: var(--text);
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#newTask:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/*task list*/
+#taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 25px;
+    list-style: none;
+}
+
+/*individual task*/
+#taskList li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--card-background);
+}
+
+/*Task checkbox*/
+#taskList input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--secondary-background);
+    cursor: pointer;
+}
+
+/*Task description*/
+#taskList li span {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+/*delete button*/
+#taskList li button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--secondary-background);
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*small-screen layout*/
+@media (max-width: 480px) {
+    .container {
+        margin-top: 30px;
+    }
+
+    .stats-container {
+        gap: 12px;
+        padding: 18px;
+    }
+
+    .details h1 {
+        font-size: 22px;
+    }
+
+    #numbers {
+        width: 65px;
+        height: 65px;
+        font-size: 16px;
+    }
+}
